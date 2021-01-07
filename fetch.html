@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+
+    <link rel="stylesheet" href="fetch.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Currency Converter</h1>
+    <hr id="hr1">
+    <div id="mainDiv">
+        <form action="/submit">
+            <img src="continental-currency-exchange.jpg" alt="currency picture">
+
+            <label for="numInput">Enter amount to be converted:</label>
+            <input id="numInput" type="number" min="0" max="1000000000" placeholder="Enter number here:">
+
+            <select name="curr1" id="startCurr">
+                <option value="select">Select currency: </option>
+                <option value="AUD">AUD - Australian Dollar</option>
+                <option value="BGN">BGN - Bulgarian Lev</option>
+                <option value="BRL">BRL - Brazilian Real</option>
+                <option value="CAD">CAD - Canadian Dollar</option>
+                <option value="CHF">CHF - Swiss Franc</option>
+                <option value="CNY">CNY - China Renminbi</option>
+                <option value="CZK">CZK - Czech Koruna</option>
+                <option value="DKK">DKK - Danish Krone</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="GBP">GBP - Pound Sterling</option>
+                <option value="HKD">HKD - Hong Kong Dollar</option>
+                <option value="HRK">HRK - Croatian Kuna</option>
+                <option value="HUF">HUF - Hungarian Forint</option>
+                <option value="IDR">IDR - Indonesian Rupiah</option>
+                <option value="ILS">ILS - Israeli new Shekel</option>
+                <option value="INR">INR - Indian Rupee</option>
+                <option value="ISK">ISK - Icelandic Króna</option>
+                <option value="JPY">JPY - Japanese Yen</option>
+                <option value="KRW">KRW - South Korean Won</option>
+                <option value="MXN">MXN - Mexican Peso</option>
+                <option value="MYR">MYR - Malasysian Ringgit</option>
+                <option value="NOK">NOK - Norwegian Krone</option>
+                <option value="NZD">NZD - New Zealand Dollar</option>
+                <option value="PHP">PHP - Philippine Peso</option>
+                <option value="PLN">PLN - Polish Zloty</option>
+                <option value="RON">RON - Romanian Leu</option>
+                <option value="RUB">RUB - Russian Ruble</option>
+                <option value="SEK">SEK - Swedish Krona</option>
+                <option value="SGD">SGD - Singapore Dollar</option>
+                <option value="THB">THB - Thai Baht</option>
+                <option value="TRY">TRY - Turkish Lira</option>
+                <option value="USD">USD - US Dollar</option>
+                <option value="ZAR">ZAR - South African Rand</option>
+            </select>
+
+            <button id="reverse"> &#60 &#62</button>
+
+            <select name="curr2" id="goalCurr">
+                <option value="select">Select currency: </option>
+                <option value="AUD">AUD - Australian Dollar</option>
+                <option value="BGN">BGN - Bulgarian Lev</option>
+                <option value="BRL">BRL - Brazilian Real</option>
+                <option value="CAD">CAD - Canadian Dollar</option>
+                <option value="CHF">CHF - Swiss Franc</option>
+                <option value="CNY">CNY - China Renminbi</option>
+                <option value="CZK">CZK - Czech Koruna</option>
+                <option value="DKK">DKK - Danish Krone</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="GBP">GBP - Pound Sterling</option>
+                <option value="HKD">HKD - Hong Kong Dollar</option>
+                <option value="HRK">HRK - Croatian Kuna</option>
+                <option value="HUF">HUF - Hungarian Forint</option>
+                <option value="IDR">IDR - Indonesian Rupiah</option>
+                <option value="ILS">ILS - Israeli new Shekel</option>
+                <option value="INR">INR - Indian Rupee</option>
+                <option value="ISK">ISK - Icelandic Króna</option>
+                <option value="JPY">JPY - Japanese Yen</option>
+                <option value="KRW">KRW - South Korean Won</option>
+                <option value="MXN">MXN - Mexican Peso</option>
+                <option value="MYR">MYR - Malasysian Ringgit</option>
+                <option value="NOK">NOK - Norwegian Krone</option>
+                <option value="NZD">NZD - New Zealand Dollar</option>
+                <option value="PHP">PHP - Philippine Peso</option>
+                <option value="PLN">PLN - Polish Zloty</option>
+                <option value="RON">RON - Romanian Leu</option>
+                <option value="RUB">RUB - Russian Ruble</option>
+                <option value="SEK">SEK - Swedish Krona</option>
+                <option value="SGD">SGD - Singapore Dollar</option>
+                <option value="THB">THB - Thai Baht</option>
+                <option value="TRY">TRY - Turkish Lira</option>
+                <option value="USD">USD - US Dollar</option>
+                <option value="ZAR">ZAR - South African Rand</option>
+            </select>
+
+            <button id="convert">Convert</button>
+            <button id="reset">Reset</button>
+
+
+            <h3 id="converted">Converted amount: </h3>
+            <h3>
+                <h6 id="output"></h6>
+                <h6 id="outputSym"></h6>
+            </h3>
+
+            <p id="dailyRate"></p>
+            <hr>
+
+            <p>Supported Currencies: </p>
+            <p>
+                <span id="AUD">AUD</span>
+                <span id="BGN">BGN</span>
+                <span id="BRL">BRL</span>
+                <span id="CAD">CAD</span>
+                <span id="CHF">CHF</span>
+                <span id="CNY">CNY</span>
+                <span id="CZK">CZK</span>
+                <span id="DKK">DKK</span>
+                <span id="EUR">EUR</span>
+                <span id="GBP">GBP</span>
+                <span id="HKD">HKD</span>
+                <span id="HRK">HRK</span>
+                <span id="HUF">HUF</span>
+                <span id="IDR">IDR</span>
+                <span id="ILS">ILS</span>
+                <span id="INR">INR</span>
+                <span id="ISK">ISK</span>
+                <span id="JPY">JPY</span>
+                <span id="KRW">KRW</span>
+                <span id="MXN">MXN</span>
+                <span id="MYR">MYR</span>
+                <span id="NOK">NOK</span>
+                <span id="NZD">NZD</span>
+                <span id="PHP">PHP</span>
+                <span id="PLN">PLN</span>
+                <span id="RON">RON</span>
+                <span id="RUB">RUB</span>
+                <span id="SEK">SEK</span>
+                <span id="SGD">SGD</span>
+                <span id="THB">THB</span>
+                <span id="TRY">TRY</span>
+                <span id="USD">USD</span>
+                <span id="ZAR">ZAR</span>
+                ...
+            </p>
+
+            <footer><a href="http://raymondayers.com/www.raymondayers.com/Raymond_Ayers_Bio.html" target="_blank">©
+                    RFA3</a> </footer>
+        </form>
+
+    </div>
+    <script src="fetch.js"></script>
+</body>
+
+</html>
